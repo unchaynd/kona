@@ -3,6 +3,8 @@ Kona is a computer language I am creating that is meant to be beautiful, powerfu
 
 Please feel free to submit issues with any thoughts or suggestions you have! :D
 
+Test
+
 ## The basic goals of Kona
 1. It should be fun and easy to use.
 2. It should be visually beautiful, and easy to read and understand.
