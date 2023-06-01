@@ -9,11 +9,11 @@ _start:
 	beq	exit		@ Exit if so
 @ Determine the length of the first argument
 	mov	r2, r1		@ Copy r1 into r2
-loop:	ldrb	r0, [r2], #1	@ Load the byte at the address in r2 into r1, and then increment r2
+loop:	ldrb	r0, [r2], #1	@ Load the byte at the address in r2 into r0, and then increment r2
 	cmp	r0, #0		@ Test whether the byte is null
 	bne	loop		@ Continue traversing memory if the byte is non-null
 	sub	r2, r2, #1	@ Decrement r2 so that it points to the null terminator
-	sub	r2, r2, r1	@ Subtract the address of the beginning of the argument from r2. Now r2 contains total length of the first argument
+	sub	r2, r2, r1	@ Subtract the original address from r2. Now r2 contains total length of the first argument
 @ Write the first argument to the standard output
 	mov	r0, #1		@ Standard output file descriptor
 	svc	0		@ Supervisor call
